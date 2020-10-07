@@ -402,168 +402,18 @@ should be considered a "primary" element.
 |--------|-----|
 | ![Date / Time](proposal_files/date.png) | <pre>accent-color: auto green;</pre> |
 
+## `<input type=text|search|password|email|tel|url|...>`
 
-
-## `<input type=number>`
-
-A numeric control typically has
-a text field displaying the value of the control,
-and a set of up/down buttons that can be used to change the value.
-The buttons often have an “arrow” glyph,
-which should be considered a “contrasting” element,
-while any shaded background on the buttons should be considered “primary” elements.
-
-
-| Sample | CSS |
-|--------|-----|
-| ![Number](proposal_files/number.png) | <pre>accent-color: lightgrey darkgrey;</pre> |
-
-
-## `<input type=search>`
-
-A search box is typically rendered in almost the same way as a normal text box.
-In some cases, a “clear” widget/button is provided,
-to allow the user to clear the search box.
-In that case, the widget/button should be considered “contrasting”,
-and any shaded background behind the widget should be considered “primary”.
-
-
-| Sample | CSS |
-|--------|-----|
-| ![Search](proposal_files/search.png) | <pre>accent-color: white blue;</pre> |
-
-
-## `<input type=password>`
-
-A password control is typically rendered in almost the same way as a normal text box.
-In some cases, a “clear” widget/button is provided,
-to allow the user to clear the password box.
-In other cases, a “reveal/hide” widget/button is provided
-to alternatively show or hide the displayed password.
-In both of these cases, the “clear” or “reveal” widget/button glyph
-should be considered “contrasting”,
-while any shaded background behind the widget should be considered “primary”.
+Text-input controls are typically rendered as an empty box
+containing the value of the input as text,
+and do not have any parts highlighted by the [=accent color=].
+However, sometimes additional controls are embedded,
+such as a “clear value” button,
+or a “show/hide password” button.
+If the visual style uses its [=accent color=] to render any of these,
+then they are likewise affected by 'accent-color'.
 
 | Sample | CSS |
 |--------|-----|
 | ![Password](proposal_files/password.png) | <pre>color: red;<br>accent-color: auto cyan;</pre> |
-
-
-
-## `<input type=text|email|tel|url|...>`
-
-Basic text fields (including email, telephone, etc.)
-are typically rendered as plain text controls,
-without any additional accents.
-In the case that accents are provided,
-the guidance above (for other control types) should be used
-to judge whether they are “primary” or “contrasting” accents.
-
-| Sample | CSS |
-|--------|-----|
-| ![Text](proposal_files/text.png) | N/A |
-
-
-
-# Existing Control Examples (as of 2020)
-
-This section shows visual samples of several different controls
-across various browsers, platforms, and eras (e.g. 2000's).
-The intention of presenting these examples
-is to provide an easy way for people to evaluate the spec text
-and per-controls guidance above in the context of existing controls.
-
-Several variations are also shown for each control,
-pulled from the Mac operating system.
-One is with Dark Mode enabled,
-and the other is with the Accent Color system setting changed to a non-default color.
-
-*Note*: The particular selections of browsers, platforms, eras, and controls
-were made in an attempt to show adequate diversity,
-while not being an exhaustive list,
-and while being as efficient as possible for me to collate.
-I have likely left out many important browsers and platforms.
-If there is a particular browser/platform/era/control combination
-that is not *represented* by a similar element in the lists below
- please bring that to my attention and I can add it.
-
-
-## `<input type=checkbox>`
-
-| Browser   | Platform| Variation    | Sample |
-|-----------|---------|--------------| :---:  |
-| Chrome 81 | Windows |              | ![Checkbox](proposal_files/Chrome81/checkbox.png) ![Checkbox Unchecked](proposal_files/Chrome81/checkbox_empty.png) |
-| Chrome 83 | Windows | (Forms Refresh) | ![Checkbox](proposal_files/Chrome83/checkbox.png) ![Checkbox Unchecked](proposal_files/Chrome83/checkbox_empty.png) |
-| Safari 13 | Mac     |              | ![Checkbox](proposal_files/Safari/checkbox.png) ![Checkbox Unchecked](proposal_files/Safari/checkbox_empty.png) |
-| Firefox 79| Windows |              | ![Checkbox](proposal_files/Firefox/checkbox.png) ![Checkbox Unchecked](proposal_files/Firefox/checkbox_empty.png) |
-| Chrome 86 | Windows | Dark Mode    | ![Checkbox](proposal_files/Chrome86_dark/checkbox.png) ![Checkbox Unchecked](proposal_files/Chrome86_dark/checkbox_empty.png) |
-| Safari 13 | Mac     | Dark Mode    | ![Checkbox](proposal_files/Safari_dark/checkbox.png) ![Checkbox Unchecked](proposal_files/Safari_dark/checkbox_empty.png) |
-| Safari 13 | Mac     | Pink Accent Color | ![Checkbox](proposal_files/Safari_pink/checkbox.png) ![Checkbox Unchecked](proposal_files/Safari_pink/checkbox_empty.png) |
-| Firefox 32| Windows | 2014         | ![Checkbox](proposal_files/Firefox_32/checkbox.png) ![Checkbox Unchecked](proposal_files/Firefox_32/checkbox_empty.png) |
-| "Aqua"    | Mac     | 2000         | ![Checkbox](proposal_files/Aqua/checkbox.png) ![Checkbox Unchecked](proposal_files/Aqua/checkbox_empty.png) |
-| Snow Leopard | Mac  | 2009         | ![Checkbox](proposal_files/Snow_leopard/checkbox.png) ![Checkbox Unchecked](proposal_files/Snow_leopard/checkbox_empty.png) |
-
-
-## `<input type=radio>`
-
-| Browser   | Platform| Variation    | Sample |
-|-----------|---------|--------------| :---:  |
-| Chrome 81 | Windows |              | ![Radio](proposal_files/Chrome81/radio.png) ![Radio Empty](proposal_files/Chrome81/radio_empty.png) |
-| Chrome 83 | Windows | (Forms Refresh) | ![Radio](proposal_files/Chrome83/radio.png) ![Radio Empty](proposal_files/Chrome83/radio_empty.png) |
-| Safari 13 | Mac     |              | ![Radio](proposal_files/Safari/radio.png) ![Radio Empty](proposal_files/Safari/radio_empty.png) |
-| Firefox 79| Windows |              | ![Radio](proposal_files/Firefox/radio.png) ![Radio Empty](proposal_files/Firefox/radio_empty.png) |
-| Chrome 86 | Windows | Dark Mode    | ![Radio](proposal_files/Chrome86_dark/radio.png) ![Radio Empty](proposal_files/Chrome86_dark/radio_empty.png) |
-| Safari 13 | Mac     | Dark Mode    | ![Radio](proposal_files/Safari_dark/radio.png) ![Radio Empty](proposal_files/Safari_dark/radio_empty.png) |
-| Safari 13 | Mac     | Pink Accent Color | ![Radio](proposal_files/Safari_pink/radio.png) ![Radio Empty](proposal_files/Safari_pink/radio_empty.png) |
-| Firefox 32| Windows | 2014         | ![Radio](proposal_files/Firefox_32/radio.png) ![Radio Empty](proposal_files/Firefox_32/radio_empty.png) |
-| "Aqua"    | Mac     | 2000         | ![Radio](proposal_files/Aqua/radio.png) ![Radio Empty](proposal_files/Aqua/radio_empty.png) |
-| Snow Leopard | Mac  | 2009         | ![Radio](proposal_files/Snow_leopard/radio.png) ![Radio Empty](proposal_files/Snow_leopard/radio_empty.png) |
-
-
-## `<select>`
-
-| Browser   | Platform| Variation    | Sample |
-|-----------|---------|--------------| :---:  |
-| Chrome 81 | Windows |              | ![Select](proposal_files/Chrome81/select.png) |
-| Chrome 83 | Windows | (Forms Refresh) | ![Select](proposal_files/Chrome83/select.png) |
-| Safari 13 | Mac     |              | ![Select](proposal_files/Safari/select.png) |
-| Firefox 79| Windows |              | ![Select](proposal_files/Firefox/select.png) |
-| Chrome 86 | Windows | Dark Mode    | ![Select](proposal_files/Chrome86_dark/select.png) |
-| Safari 13 | Mac     | Dark Mode    | ![Select](proposal_files/Safari_dark/select.png) |
-| Safari 13 | Mac     | Pink Accent Color | ![Select](proposal_files/Safari_pink/select.png) |
-| Firefox 32| Windows | 2014         | ![Select](proposal_files/Firefox_32/select.png) |
-| "Aqua"    | Mac     | 2000         | ![Select](proposal_files/Aqua/select.png) |
-| Snow Leopard | Mac  | 2009         | ![Select](proposal_files/Snow_leopard/select.png) |
-
-
-## `<input type=date>`
-
-| Browser   | Platform| Variation    | Sample |
-|-----------|---------|--------------| :---:  |
-| Chrome 81 | Windows |              | ![Date Picker](proposal_files/Chrome81/date.png) |
-| Chrome 83 | Windows | (Forms Refresh) | ![Date Picker](proposal_files/Chrome83/date.png) |
-| Safari 13 | Mac     |              | ![Date Picker](proposal_files/Safari/date.png) |
-| Firefox 79| Windows |              | ![Date Picker](proposal_files/Firefox/date.png) |
-| Chrome 86 | Windows | Dark Mode    | ![Date Picker](proposal_files/Chrome86_dark/date.png) |
-| Safari 13 | Mac     | Dark Mode    | ![Date Picker](proposal_files/Safari_dark/date.png) |
-| Safari 13 | Mac     | Pink Accent Color | ![Date Picker](proposal_files/Safari_pink/date.png) |
-| Firefox 32| Windows | 2014         | ![Date Picker](proposal_files/Firefox_32/date.png) |
-| Snow Leopard | Mac  | 2009         | ![Date Picker](proposal_files/Snow_leopard/date.png) |
-
-
-## `<button>`
-
-| Browser   | Platform| Variation    | Sample |
-|-----------|---------|--------------| :---:  |
-| Chrome 81 | Windows |              | ![Button](proposal_files/Chrome81/button.png) |
-| Chrome 83 | Windows | (Forms Refresh) | ![Button](proposal_files/Chrome83/button.png) |
-| Safari 13 | Mac     |              | ![Button](proposal_files/Safari/button.png) |
-| Firefox 79| Windows |              | ![Button](proposal_files/Firefox/button.png) |
-| Chrome 86 | Windows | Dark Mode    | ![Button](proposal_files/Chrome86_dark/button.png) |
-| Safari 13 | Mac     | Dark Mode    | ![Button](proposal_files/Safari_dark/button.png) |
-| Safari 13 | Mac     | Pink Accent Color | ![Button](proposal_files/Safari_pink/button.png) |
-| Firefox 32| Windows | 2014         | ![Button](proposal_files/Firefox_32/button.png) |
-| "Aqua"    | Mac     | 2000         | ![Button](proposal_files/Aqua/button.png) |
-| Snow Leopard | Mac  | 2009         | ![Button](proposal_files/Snow_leopard/button.png) |
-
 
